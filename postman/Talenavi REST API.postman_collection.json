@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "ee17b6bb-3b8a-4e17-b50e-f5869fb2d0f5",
+    "name": "Talenavi REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31489020",
+    "_collection_link": "https://go.postman.co/collection/31489020-ee17b6bb-3b8a-4e17-b50e-f5869fb2d0f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Task",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{localhost}}/api/task",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "task"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "dolor",
+              "disabled": true
+            },
+            {
+              "key": "assignee",
+              "value": "Azril",
+              "description": "existing: Fahri | Azril | Ujang | Gatot",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "priority",
+              "value": "medium",
+              "description": "low | medium | high",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "min",
+              "value": "5",
+              "description": "time_tracked | int",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "max",
+              "value": "10",
+              "description": "time_tracked | int",
+              "disabled": true
+            },
+            {
+              "key": "start",
+              "value": "2026-02-02",
+              "description": "due_date | date",
+              "disabled": true
+            },
+            {
+              "key": "end",
+              "value": "2026-12-31",
+              "description": "due_date | date",
+              "disabled": true
+            },
+            {
+              "key": "status",
+              "value": "pending",
+              "description": "pending | open | in_progress | completed",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Judul apaan ini\",\r\n    \"assignee\": \"Aleph\",\r\n    \"due_date\": \"2026-01-26\",\r\n    \"time_tracked\": 3,\r\n    \"status\": \"open\",\r\n    \"priority\": \"medium\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/task",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "task"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Judul apaan ini\",\r\n    \"assignee\": \"Ujang\",\r\n    \"due_date\": \"2026-02-26\",\r\n    \"time_tracked\": 3,\r\n    \"status\": \"open\",\r\n    \"priority\": \"medium\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{localhost}}/api/task/1",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "task",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{localhost}}/api/task/1",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "task",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Chart",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{localhost}}/api/chart?type=assignee",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "chart"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "assignee",
+              "description": "status | priority | assignee"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{localhost}}/api/report",
+          "host": [
+            "{{localhost}}"
+          ],
+          "path": [
+            "api",
+            "report"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "dolor",
+              "disabled": true
+            },
+            {
+              "key": "assignee",
+              "value": "John",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "priority",
+              "value": "high",
+              "description": "low | medium | high",
+              "disabled": true
+            },
+            {
+              "key": "min",
+              "value": "0",
+              "description": "time_tracked | int",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "max",
+              "value": "10",
+              "description": "time_tracked | int",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "start",
+              "value": "2026-02-02",
+              "description": "due_date | date",
+              "disabled": true
+            },
+            {
+              "key": "end",
+              "value": "2026-12-31",
+              "description": "due_date | date",
+              "disabled": true
+            },
+            {
+              "key": "status",
+              "value": "in_progress",
+              "description": "pending | open | in_progress | completed",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

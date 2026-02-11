@@ -61,7 +61,7 @@ Import postman collection in folder postman then API will available to consume. 
 
 ---
 
-You can add some parameters to specify your report
+You can add query parameters to specify your report
 
 | Params   | Description                                      |
 | -------- | ------------------------------------------------ |
