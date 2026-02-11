@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
-use App\Exceptions\ApplicationException;
+// use App\Exceptions\ApplicationException;
 use Carbon\Carbon;
 
 class TaskController extends Controller
@@ -37,7 +37,10 @@ class TaskController extends Controller
         $now = Carbon::today();
 
         if ($due_date->lt($now)) {
-            throw new ApplicationException('Due date is not allowed to be in the past', 422);
+            return response()->json([
+                'success' => false,
+                "message" => "Due date is not allowed to be in the past"
+            ])->setStatusCode(422);
         }
         $status = $request->input('status', 'pending');
 
@@ -72,7 +75,10 @@ class TaskController extends Controller
         $now = Carbon::today();
 
         if ($due_date->lt($now)) {
-            throw new ApplicationException('Due date is not allowed to be in the past', 422);
+            return response()->json([
+                "success" => false,
+                "message" => "Due date is not allowed to be in the past"
+            ])->setStatusCode(422);
         }
 
         // check existing task and update
