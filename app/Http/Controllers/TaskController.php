@@ -41,7 +41,7 @@ class TaskController extends Controller
         }
         $status = $request->input('status', 'pending');
 
-        Task::create([
+        $data = Task::create([
             'title' => $request->input('title'),
             'assignee' => $request->input('assignee'),
             'due_date' => $due_date,
@@ -52,6 +52,7 @@ class TaskController extends Controller
         return response()->json([
             'success' => true,
             'message' => "Create task successfully",
+            'data' => $data
         ]);
     }
 
