@@ -33,7 +33,7 @@ class ChartController extends Controller
             ->groupBy('status')
             ->pluck('total', 'status');
 
-        $result = array_merge($defaultStatus, $data);
+        $result = array_merge($defaultStatus, $data->toArray());
         return response()->json([
             "status_summary" => $result
         ]);
@@ -51,7 +51,7 @@ class ChartController extends Controller
             ->groupBy('priority')
             ->pluck('total', 'priority');
 
-        $result = array_merge($defaultPriority, $data);
+        $result = array_merge($defaultPriority, $data->toArray());
         return response()->json([
             'priority_summary' => $result
         ]);
