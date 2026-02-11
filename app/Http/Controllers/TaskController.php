@@ -71,7 +71,7 @@ class TaskController extends Controller
         ]);
 
         // validate due_date cannot be in the past
-        $due_date = Carbon::parse($request->input('due_date'))->startOfDay();
+        $due_date = Carbon::parse($request->input('due_date'))->startOfDay() ?? null;
         $now = Carbon::today();
 
         if ($due_date->lt($now)) {
@@ -82,7 +82,14 @@ class TaskController extends Controller
         }
 
         // check existing task and update
-        $task = Task::findOrFail($id);
+        $task = Task::find($id);
+
+        if (empty($task)) {
+            return response()->json([
+                "succcess" => false,
+                "message" => "Data is not found"
+            ])->setStatusCode(404);
+        }
         $task->update([
             'title' => $request->input('title'),
             'assignee' => $request->input('assignee'),
@@ -94,12 +101,20 @@ class TaskController extends Controller
         return response()->json([
             'success' => true,
             'message' => "Update task successfully",
+            'data' => $task->fresh()
         ]);
     }
 
     public function destroy($id)
     {
-        $task = Task::findOrFail($id);
+        $task = Task::find($id);
+
+        if (empty($task)) {
+            return response()->json([
+                "success" => false,
+                "message" => "Data not found"
+            ])->setStatusCode(404);
+        }
         $task->delete();
 
         return response()->json([
