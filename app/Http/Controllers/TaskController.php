@@ -63,7 +63,7 @@ class TaskController extends Controller
             'assignee' => 'nullable|string|max:255',
             'due_date' => 'required|date',
             'time_tracked' => 'required|numeric|min:0',
-            'status' => 'required|string',
+            'status' => 'nullable|string',
             'priority' => 'required|string'
         ]);
 
