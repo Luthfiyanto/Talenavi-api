@@ -88,29 +88,33 @@ You can add query parameters to specify your report
 
 ## Demo Documentation
 
-1. The project has been running in local
-   ![Running localhost](screenshoot/pre.png)
+### The project has been running in local
 
-2. Create new task
-   a. Success response
+![Running localhost](screenshoot/pre.png)
+
+### Create new task
+
+1. Success response
    ![Success response](screenshoot/create1.png)
-   b. Status default value as pending
+2. Status default value as pending
    ![Status default value](screenshoot/create2.png)
-   c. Due_date validation error
+3. Due_date validation error
    ![Due date validation](screenshoot/create.png)
 
-3. Generating and Excel
-   a. Set query params and send the request
+### Generating and Excel
+
+1. Set query params and send the request
    ![Pre generate](screenshoot/excel.png)
-   b. Saving document
+2. Saving document
    ![Saving](screenshoot/excel1.png)
-   c. Check data in the genarated excel
+3. Check data in the genarated excel
    ![Check](screenshoot/excel2.png)
 
-4. Task summary chart
-   a. Assignee type
+### Task summary chart
+
+1. Assignee type
    ![Assignee chart](screenshoot/chart_assignee.png)
-   b. Status type
+2. Status type
    ![Status chart](screenshoot/chart_status.png)
-   c. Priority type
+3. Priority type
    ![Priority chart](screenshoot/chart_priority.png)
